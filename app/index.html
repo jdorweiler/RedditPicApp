@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en" ng-app>
+<head>
+  <meta charset="utf-8">
+  <title>Reddit Picture Viewer</title>
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="lib/angular/angular.js"></script>
+  <script src="js/controllers.js"></script>
+</head>
+<body ng-controller="RedditPosts">
+
+  <div class="container-fluid">
+    <div class="row-fluid">
+      <div class="span2">
+        <!--Sidebar content-->
+
+        Search: <input ng-model="query">
+        Sort by:
+        <select ng-model="orderProp">
+          <option value='data.score'>Most Down Votes</option>
+          <option value='-data.score'>Most Up Votes</option>
+        </select>
+	Subreddit:
+        <select ng-model="subreddit" ng-change="updatePosts()">
+           <option value='pics'>pics</option>
+           <option value='earthporn'>earth</option>
+           <option value='spaceporn'>Space</option>
+        </select>
+
+      </div>
+      <div class="span10">
+        <!--Body content-->
+
+        <ul class="Post">
+          <li ng-repeat="entry in Post.children | filter:query | orderBy:orderProp ">
+	<a href="{{entry.data.title}}" class="thumb"><img ng-src="{{entry.data.url}}"  height="250" width="250"></a>
+	{{entry.data.ups}}
+	{{entry.data.downs}}   
+         </li>
+        </ul>
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>
