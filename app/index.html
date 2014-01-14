@@ -25,18 +25,20 @@
         <select ng-model="subreddit" ng-change="updatePosts()">
            <option value='pics'>pics</option>
            <option value='earthporn'>earth</option>
-           <option value='spaceporn'>Space</option>
+           <option value='all'>all</option>
         </select>
 
       </div>
       <div class="span10">
         <!--Body content-->
-
         <ul class="Post">
           <li ng-repeat="entry in Post.children | filter:query | orderBy:orderProp ">
-	<a href="{{entry.data.title}}" class="thumb"><img ng-src="{{entry.data.url}}"  height="250" width="250"></a>
-	{{entry.data.ups}}
-	{{entry.data.downs}}   
+		  <div class = "row">
+			<a href="{{entry.data.title}}" class="thumb"><img ng-src="{{entry.data.url}}"  
+			height="250" width="250"></a>
+			{{entry.data.title}}
+			</div>
+			</div>
          </li>
         </ul>
 

@@ -7,6 +7,17 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
+ html {background-color: #999999;}
+h1 {color: #4079B2;}
+body, th, td, li {font-family: sands-serif; color: #D6D6D6;}
+ul{list-style-type: none;}
+table {border-left: 1px solid #D6D6D6; background-color:#ffffffaa;}
+table, td {border-right: 1px solid #D6D6D6; background-color:#ffffffaa;}
+table {border-collapse: collapse;}
+tr {border: solid; border-width: 1px 0;}
+td{width: 130; text-align: center;}
+.colorCell {background-color:#4079B2;}
+li:hover {background-color:#909999;}
 
 article,
 aside,
@@ -157,7 +168,7 @@ body {
   font-size: 13px;
   line-height: 18px;
   color: #333333;
-  background-color: #ffffff;
+  background-color: #999999;
 }
 
 a {
